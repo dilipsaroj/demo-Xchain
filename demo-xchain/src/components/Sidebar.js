@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import {
     FaTh,
     FaBars,
@@ -7,8 +7,8 @@ import {
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
-
 const Sidebar = ({children}) => {
+    
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
@@ -30,8 +30,8 @@ const Sidebar = ({children}) => {
         }
     ]
     return (
-        <div className="container">
-           <div style={{width: isOpen ? "300px" : "50px"}} className="sidebar">
+        <div className="containers">
+           <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-collapse"}`} >
                <div className="top_section">
                    <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
@@ -47,7 +47,7 @@ const Sidebar = ({children}) => {
                    ))
                }
            </div>
-           <main>{children}</main>
+           <main className={`main-content ${isOpen ? "sidebar-open" : "sidebar-collapse"}`}>{children}</main>
         </div>
     );
 };
