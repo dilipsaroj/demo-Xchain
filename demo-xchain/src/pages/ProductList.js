@@ -8,21 +8,22 @@ const ProductList = () => {
             .then(res => res.json())
             .then((result) => setTabledata(result.users));
     }
-    console.log("tableData",tableData)
+    
     useEffect(() => {
         fetchData()
     }, [])
+    
     const userTable = () => {
         return (
             <table>
                 <tr>
                     <th>id</th>
-                    <th>firstName</th>
-                    <th>lastName</th>
-                    <th>username</th>
-                    <th>phone</th>
-                    <th>email</th>
-                    <th>birthDate</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>User Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Birth Date</th>
                 </tr>
                 <tbody>
                 {

@@ -10,7 +10,7 @@ import ProductList from './pages/ProductList';
 const App = () => {
   const [themeMode,setThememode] = useState("dark-mode")
   // "site-container"
-  console.log(themeMode,"themeMode")
+ 
   return (
     <div className={`site-container ${themeMode === "light-mode" ? "light-mode" : "dark-mode"}`}>
       <BrowserRouter>
